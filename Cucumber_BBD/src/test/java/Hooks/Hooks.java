@@ -9,17 +9,14 @@ import org.testng.annotations.AfterTest;
 
 public class Hooks {
   
-	 WebDriver driver;
+public static WebDriver driver;
 	 
 	 
-	 Hooks(WebDriver driver)
-	 {
-		 this.driver=driver;
-	 }
+	 
   
 
   @BeforeTest
-  public void beforeTest() {
+  public void setup() {
 	 
 	  driver =new ChromeDriver();
 	  driver.manage().window().maximize();
@@ -27,7 +24,7 @@ public class Hooks {
   }
 
   @AfterTest
-  public void afterTest() {
+  public void closestmt() {
 	  driver.quit();
   }
 

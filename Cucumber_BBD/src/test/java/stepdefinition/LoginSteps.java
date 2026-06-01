@@ -13,13 +13,13 @@ public class LoginSteps {
 
     WebDriver driver;
     
-    Hooks hk;
+    Hooks hk =new Hooks();
     
     
     @Given("user opens browser and navigates to website")
     public void openBrowser() {
     	
-    	hk.beforeTest();
+    	hk.setup();
     }
 
     @When("user clicks on My Account")
@@ -114,6 +114,6 @@ public class LoginSteps {
 
     @Then("user closes browser")
     public void closeBrowser() {
-    	hk.afterTest();
+    	hk.closestmt();;
     }
 }
